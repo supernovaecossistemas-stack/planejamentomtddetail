@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Posicionamento MTD Detail no Instagram</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Identidade Supernova: fundo branco, verde como acento, Montserrat nos títulos e Inter no texto.
+   Layout: barra de marca, abertura centralizada com brilho verde, seções numeradas em cartões arredondados. */
+:root {
+  --bg: #FFFFFF;
+  --ink: #16201C;
+  --ink-soft: #5F6B65;
+  --mute: #8A948E;
+  --line: rgba(22,32,28,.10);
+  --line-s: rgba(22,32,28,.07);
+  --green: #0E8F58;
+  --green-2: #3E9A70;
+  --green-l: #F2F7F3;
+  --green-p: #E8F3EC;
+  --amber: #B4740E;
+  --amber-l: #FBF4E8;
+  --dark: #101815;
+  --d: 'Montserrat', system-ui, sans-serif;
+  --b: 'Inter', system-ui, sans-serif;
+  --shadow: 0 1px 2px rgba(22,32,28,.04), 0 12px 32px -18px rgba(22,32,28,.18);
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--b);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--d); text-wrap: balance; margin: 0; color: var(--ink); }
+h1 { font-size: clamp(34px, 6vw, 58px); font-weight: 700; letter-spacing: -0.034em; line-height: 1.04; }
+h1 em { font-style: normal; color: var(--green); }
+h2 { font-size: clamp(24px, 3.4vw, 32px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; }
+h3 { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.3; }
+p { margin: 0; max-width: 68ch; }
+a { color: var(--green); }
+a:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 4px; }
+ul, ol { margin: 0; padding-left: 20px; max-width: 68ch; display: flex; flex-direction: column; gap: 6px; }
+li::marker { color: var(--green); }
+strong { font-weight: 600; color: var(--ink); }
+.num { font-variant-numeric: tabular-nums; }
+
+/* Barra de marca */
+.brandbar { border-bottom: 1px solid var(--line-s); background: var(--bg); }
+.brandbar-in { max-width: 1040px; margin: 0 auto; padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.wordmark { font-family: var(--d); font-size: 20px; letter-spacing: 0.02em; color: var(--green); font-weight: 300; }
+.wordmark b { font-weight: 700; }
+.client { font-family: var(--d); font-size: 13px; font-weight: 500; color: var(--ink-soft); }
+
+.page { max-width: 1040px; margin: 0 auto; padding: 0 22px 80px; display: flex; flex-direction: column; gap: 64px; }
+
+/* Abertura */
+.head {
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px;
+  padding: 72px 0 8px;
+  background: radial-gradient(ellipse 60% 55% at 50% 38%, var(--green-p) 0%, rgba(232,243,236,0) 70%);
+}
+.eyebrow { font-family: var(--d); font-weight: 600; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-2); display: flex; align-items: center; gap: 12px; }
+.eyebrow::before { content: ""; width: 26px; height: 1px; background: var(--green-2); flex: none; }
+.lede { font-size: 18px; color: var(--ink-soft); max-width: 56ch; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin-top: 28px; width: 100%; text-align: left; }
+.fact { background: var(--bg); border: 1px solid var(--line); border-radius: 20px; padding: 20px 22px; display: flex; flex-direction: column; gap: 4px; box-shadow: var(--shadow); }
+.fact b { font-family: var(--d); font-size: 22px; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); }
+.fact span { font-size: 14px; color: var(--ink-soft); }
+
+/* Índice */
+.toc { background: var(--green-l); border: 1px solid var(--line-s); border-radius: 20px; padding: 22px 26px; }
+.toc ol { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 6px 32px; max-width: none; padding-left: 22px; font-family: var(--d); font-size: 14px; font-weight: 500; }
+.toc a { color: var(--ink); text-decoration: none; }
+.toc a:hover { color: var(--green); }
+
+/* Seções */
+section { display: flex; flex-direction: column; gap: 18px; scroll-margin-top: 20px; color: var(--ink-soft); }
+.sec-head { display: flex; align-items: center; gap: 14px; margin-bottom: 2px; }
+.sec-n { font-family: var(--d); font-weight: 700; font-size: 14px; color: var(--green); background: var(--green-p); border-radius: 10px; min-width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums; flex: none; }
+.sub { color: var(--ink-soft); }
+
+.statement { background: var(--dark); color: #FFFFFF; padding: 30px 32px; border-radius: 22px; font-size: clamp(19px, 2.4vw, 24px); font-family: var(--d); font-weight: 600; letter-spacing: -0.02em; line-height: 1.3; max-width: none; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.card { background: var(--bg); border: 1px solid var(--line); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 12px; box-shadow: var(--shadow); }
+.card p, .card ul { font-size: 15px; color: var(--ink-soft); }
+.tag { align-self: flex-start; font-family: var(--d); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 10px; border-radius: 8px; background: var(--green-p); color: var(--green); }
+.tag.warn { background: var(--amber-l); color: var(--amber); }
+.card dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-size: 14.5px; }
+.card dt { color: var(--mute); font-family: var(--d); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; padding-top: 2px; }
+.card dd { margin: 0; color: var(--ink); }
+
+.table-wrap { overflow-x: auto; background: var(--bg); border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow); }
+table { border-collapse: collapse; width: 100%; font-size: 15px; min-width: 560px; }
+th, td { text-align: left; padding: 14px 20px; border-bottom: 1px solid var(--line-s); vertical-align: top; color: var(--ink-soft); }
+td:first-child { color: var(--ink); font-weight: 500; }
+th { font-family: var(--d); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mute); font-weight: 600; background: var(--green-l); }
+tr:last-child td { border-bottom: 0; }
+td.r, th.r { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr.hl td { background: var(--green-p); font-weight: 600; color: var(--ink); }
+
+/* Orçamento */
+.split { display: flex; height: 56px; border-radius: 999px; overflow: hidden; font-family: var(--d); font-weight: 600; background: var(--amber-l); }
+.split div { display: flex; align-items: center; padding: 0 22px; white-space: nowrap; font-size: 14px; }
+.split .msg { flex: 80; background: var(--green); color: #FFFFFF; border-radius: 999px; }
+.split .aud { flex: 20; color: var(--amber); justify-content: center; padding: 0 8px; }
+
+footer { border-top: 1px solid var(--line); padding-top: 24px; font-size: 14px; color: var(--mute); display: flex; flex-direction: column; gap: 8px; }
+@media (max-width: 520px) {
+  .head { padding-top: 48px; }
+  .page { gap: 48px; }
+  .split div { font-size: 12px; padding: 0 12px; }
+  .statement { padding: 24px; }
+  .card { padding: 20px; }
+}
+</style>
+</head>
+<body>
+<div class="brandbar"><div class="brandbar-in"><span class="wordmark"><b>SUPER</b>NOVA</span><span class="client">MTD Detail Studio · Goiânia</span></div></div>
+<div class="page">
+
+  <header class="head">
+    <div class="eyebrow">MTD Detail Studio · Goiânia · novembro de 2026</div>
+    <h1>Plano de <em>posicionamento</em> no Instagram</h1>
+    <p class="lede">Quem a MTD quer atrair, onde essas pessoas moram e circulam em Goiânia, e como aplicar R$ 100 por dia para falar só com elas.</p>
+    <div class="facts">
+      <div class="fact"><b class="num">R$ 100/dia</b><span>R$ 3.000 por mês (30 dias)</span></div>
+      <div class="fact"><b class="num">R$ 80 + R$ 20</b><span>mensagens + audiência</span></div>
+      <div class="fact"><b>Só Goiânia</b><span>bairros nobres, shoppings e condomínios de alto padrão</span></div>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Índice">
+    <ol>
+      <li><a href="#ponto-de-partida">Ponto de partida</a></li>
+      <li><a href="#posicionamento">Posicionamento</a></li>
+      <li><a href="#publico-alvo">Público-alvo</a></li>
+      <li><a href="#personas">Personas</a></li>
+      <li><a href="#onde-moram">Onde moram</a></li>
+      <li><a href="#onde-frequentam">Onde frequentam</a></li>
+      <li><a href="#segmentacao">Segmentação no Meta Ads</a></li>
+      <li><a href="#investimento">Investimento</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1 -->
+  <section id="ponto-de-partida">
+    <div class="sec-head"><span class="sec-n">01</span><h2>Ponto de partida</h2></div>
+    <p class="sub">O que a conta já mostrou nos últimos 6 meses (17/05 a 17/11/2026).</p>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><td>Perfil</td><td>@mtddetail, 5.307 seguidores, 217 publicações. Bio: "Alto padrão em PPF". Estúdio na Av. César Lattes, Novo Horizonte.</td></tr>
+          <tr><td>Investimento</td><td class="num">R$ 19.024 em 6 meses, cerca de R$ 3,2 mil por mês.</td></tr>
+          <tr><td>Resultado</td><td class="num">2.122 conversas iniciadas, a R$ 8,97 cada.</td></tr>
+          <tr><td>Público usado</td><td>Homens de 25 a 65 anos, raio aberto de 15 a 20 km, sem filtro de bairro.</td></tr>
+          <tr><td>O que vende conversa</td><td>Reel de entrega com PPF FULL. Ranger V6 (R$ 7,98), Geely EX5 (R$ 7,39), Jaecoo 7 (R$ 8,01), CS75 (R$ 8,01).</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>O que muda neste plano:</strong> a conta sai do raio aberto de 20 km e passa a falar só com as áreas de alto padrão de Goiânia. A troca é consciente: menos conversas, de pessoas com mais chance de pagar um serviço de R$ 6 a 7 mil.</p>
+  </section>
+
+  <!-- 2 -->
+  <section id="posicionamento">
+    <div class="sec-head"><span class="sec-n">02</span><h2>Posicionamento</h2></div>
+    <p class="statement">A MTD é o estúdio de PPF de Goiânia para quem acabou de comprar um carro de alto valor e quer que ele continue com cara de novo.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="tag">Pilar 1</span>
+        <h3>Especialista em PPF</h3>
+        <p>O perfil fala de proteção de pintura, e deixa lavagem e estética geral em segundo plano. Quem paga R$ 6 mil procura o especialista.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Pilar 2</span>
+        <h3>Prova que se vê</h3>
+        <p>Recorte da película, aplicação no capô, risco que some com calor, carro pronto sob luz de estúdio. Cada vídeo mostra uma prova.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Pilar 3</span>
+        <h3>Atendimento de alto padrão</h3>
+        <p>Horário marcado, prazo de entrega cumprido, um único prazo de garantia e resposta rápida no WhatsApp.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>O perfil faz</h3>
+        <ul>
+          <li>Mostra carros de R$ 200 mil ou mais como padrão do estúdio.</li>
+          <li>Cita modelo, serviço, película e garantia em toda legenda.</li>
+          <li>Fala de preservar o valor de revenda do carro.</li>
+          <li>Mostra o dono ou o aplicador explicando o serviço.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>O perfil evita</h3>
+        <ul>
+          <li>Promoção, desconto, sorteio e "menor preço".</li>
+          <li>Parcelamento como chamada principal.</li>
+          <li>Garantias diferentes em cada post (hoje aparecem 8 e 12 anos).</li>
+          <li>Carros populares como destaque do feed.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section id="publico-alvo">
+    <div class="sec-head"><span class="sec-n">03</span><h2>Público-alvo</h2></div>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><td>Quem</td><td>Homens de 28 a 60 anos. É o perfil que já gera as conversas da conta.</td></tr>
+          <tr><td>Carro</td><td>Caminhonetes (Ranger V6, Silverado, RAM, Hilux), SUVs novos de valor alto (Geely EX5, Jaecoo 7, BYD, GWM) e, como teste, esportivos e europeus.</td></tr>
+          <tr><td>Poder de compra</td><td>Carro de R$ 200 mil ou mais. Um serviço de R$ 6 a 7 mil representa até 3,5% do valor do carro.</td></tr>
+          <tr><td>Ocupação provável</td><td>Empresários, produtores rurais, médicos, advogados e outros profissionais liberais.</td></tr>
+          <tr><td>Momento de compra</td><td>Primeiros 30 dias com o carro novo, troca de carro, ou depois do primeiro risco ou pedrada.</td></tr>
+          <tr><td>O que pesa na decisão</td><td>Acabamento do recorte, garantia, prazo com o carro parado e confiança em quem aplica.</td></tr>
+          <tr><td>Onde está</td><td>Somente Goiânia, nas áreas das seções 5 e 6.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section id="personas">
+    <div class="sec-head"><span class="sec-n">04</span><h2>Personas</h2></div>
+    <p class="sub">Perfis fictícios para orientar roteiro e atendimento. Os dois primeiros se apoiam nos dados da conta; o terceiro ainda é hipótese.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="tag">Carro-chefe da conta</span>
+        <h3>Marcelo, 44 anos</h3>
+        <p>Produtor rural e empresário.</p>
+        <dl>
+          <dt>Carro</dt><dd>Ranger V6, Silverado ou RAM</dd>
+          <dt>Mora</dt><dd>Condomínio horizontal: Alphaville Flamboyant, Aldeia do Vale, Jardins</dd>
+          <dt>Rotina</dt><dd>Estrada de terra até a fazenda, cidade durante a semana</dd>
+          <dt>Dor</dt><dd>Pedrisco no capô e risco de galho na lateral</dd>
+          <dt>Decide</dt><dd>Rápido. Pergunta preço e prazo no WhatsApp</dd>
+          <dt>Mensagem</dt><dd>"A caminhonete aguenta a estrada. A pintura, só com PPF."</dd>
+        </dl>
+      </div>
+      <div class="card">
+        <span class="tag">SUV novo</span>
+        <h3>Rafael, 36 anos</h3>
+        <p>Médico ou advogado.</p>
+        <dl>
+          <dt>Carro</dt><dd>Geely EX5, Jaecoo 7, BYD Song Plus, GWM</dd>
+          <dt>Mora</dt><dd>Apartamento no Marista, Bueno ou Jardim Goiás</dd>
+          <dt>Rotina</dt><dd>Garagem de prédio, estacionamento de hospital e de shopping</dd>
+          <dt>Dor</dt><dd>Batida de porta e risco em vaga apertada</dd>
+          <dt>Decide</dt><dd>Pesquisa, compara 2 ou 3 estúdios, cobra garantia</dd>
+          <dt>Mensagem</dt><dd>"Seu carro sai do estúdio protegido por [X] anos."</dd>
+        </dl>
+      </div>
+      <div class="card">
+        <span class="tag warn">Hipótese a testar</span>
+        <h3>Thiago, 31 anos</h3>
+        <p>Empresário e entusiasta de carros.</p>
+        <dl>
+          <dt>Carro</dt><dd>Mustang, BMW M, Audi RS, Porsche</dd>
+          <dt>Mora</dt><dd>Jardim Goiás, Park Lozandes ou condomínio fechado</dd>
+          <dt>Rotina</dt><dd>Segue perfis de carro, vai a encontros e ao autódromo</dd>
+          <dt>Dor</dt><dd>Pedrada na frente e acabamento malfeito</dd>
+          <dt>Decide</dt><dd>Pelo portfólio. Quer ver recorte de perto</dd>
+          <dt>Mensagem</dt><dd>"Recorte feito para o seu carro, borda por borda."</dd>
+        </dl>
+        <p class="sub">Esportivos tiveram menos de R$ 120 de teste cada na conta. Ainda não há vencedor.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section id="onde-moram">
+    <div class="sec-head"><span class="sec-n">05</span><h2>Onde moram</h2></div>
+    <p class="sub">Somente endereços dentro de Goiânia. A prioridade indica onde concentrar a verba primeiro.</p>
+    <h3>Bairros nobres (apartamentos de alto padrão)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Bairro</th><th>Perfil</th><th>Prioridade</th></tr></thead>
+        <tbody>
+          <tr><td>Setor Marista</td><td>Metro quadrado mais caro da cidade, lançamentos de altíssimo padrão</td><td>Alta</td></tr>
+          <tr><td>Setor Bueno</td><td>Muito populoso, torres novas de alto padrão, Parque Vaca Brava</td><td>Alta</td></tr>
+          <tr><td>Jardim Goiás</td><td>Entorno do Flamboyant Shopping e do Parque Flamboyant</td><td>Alta</td></tr>
+          <tr><td>Setor Oeste</td><td>Bairro nobre tradicional, prédios mais antigos, público de renda consolidada</td><td>Alta</td></tr>
+          <tr><td>Alto da Glória</td><td>Vizinho do Bueno e do Jardim Goiás, condomínios com segurança privada</td><td>Média</td></tr>
+          <tr><td>Park Lozandes</td><td>Torres recentes de alto padrão perto do Jardim Goiás</td><td>Média</td></tr>
+          <tr><td>Nova Suíça e Jardim América (trecho próximo ao Bueno)</td><td>Faixa de transição com prédios novos</td><td>Baixa</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Condomínios fechados de alto padrão (casas)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Condomínio</th><th>Perfil</th><th>Prioridade</th></tr></thead>
+        <tbody>
+          <tr><td>Alphaville Flamboyant (Ipês, Cruzeiro do Sul, Goiás)</td><td>Sobrados de R$ 6 a 7 milhões anunciados em 2026</td><td>Alta</td></tr>
+          <tr><td>Aldeia do Vale</td><td>Lotes grandes, casas de altíssimo padrão, hípica e lago</td><td>Alta</td></tr>
+          <tr><td>Jardins Madri, Paris, Atenas, Milão, Florença, Munique, Valência e França</td><td>Linha Jardins dentro de Goiânia, casas de R$ 1,6 a 3,6 milhões</td><td>Alta</td></tr>
+          <tr><td>Portal do Sol I e II</td><td>Condomínios horizontais tradicionais e valorizados</td><td>Média</td></tr>
+          <tr><td>Goiânia Golfe Clube e Plateau d'Or</td><td>Lotes na faixa de R$ 1,5 a 2,2 milhões</td><td>Média</td></tr>
+          <tr><td>Residencial Granville e Housing Flamboyant</td><td>Condomínios menores de alto padrão</td><td>Baixa</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section id="onde-frequentam">
+    <div class="sec-head"><span class="sec-n">06</span><h2>Onde frequentam</h2></div>
+    <p class="sub">O Meta entrega para quem mora no local ou esteve nele recentemente. Marcar estes pontos alcança o público também fora de casa.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Shoppings de alto padrão</h3>
+        <ul>
+          <li><strong>Flamboyant Shopping</strong>, Jardim Goiás (Av. Dep. Jamel Cecílio)</li>
+          <li><strong>Goiânia Shopping</strong>, Setor Bueno (Av. T-10)</li>
+          <li><strong>Bougainville Shopping</strong>, Setor Marista (Rua 9)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Parques e lazer</h3>
+        <ul>
+          <li>Parque Flamboyant, Jardim Goiás</li>
+          <li>Parque Vaca Brava, Setor Bueno</li>
+          <li>Parque Areião, Setor Marista</li>
+          <li>Bosque dos Buritis, Setor Oeste</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Gastronomia e trabalho</h3>
+        <ul>
+          <li>Polo gastronômico do Setor Marista</li>
+          <li>Alameda gastronômica do Bougainville</li>
+          <li>Órion Complex e torres comerciais do Marista</li>
+          <li>Academias e clubes dentro dos bairros da seção 5</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Universo do carro</h3>
+        <ul>
+          <li>Autódromo Internacional de Goiânia</li>
+          <li>Concessionárias de marcas premium e de caminhonetes</li>
+          <li>Encontros de carros e track days</li>
+        </ul>
+        <p class="sub">Pergunte aos clientes atuais onde compraram o carro e marque essas concessionárias.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section id="segmentacao">
+    <div class="sec-head"><span class="sec-n">07</span><h2>Segmentação no Meta Ads</h2></div>
+    <p class="sub">Como transformar as seções 5 e 6 em configuração de conjunto de anúncios.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Pin no mapa</th><th>Cobre</th><th class="r">Raio</th></tr></thead>
+        <tbody>
+          <tr><td>Bougainville Shopping</td><td>Setor Marista, Parque Areião, parte do Setor Oeste</td><td class="r">1,5 km</td></tr>
+          <tr><td>Goiânia Shopping</td><td>Setor Bueno, Vaca Brava, Nova Suíça</td><td class="r">2 km</td></tr>
+          <tr><td>Flamboyant Shopping</td><td>Jardim Goiás, Parque Flamboyant, Alto da Glória, Park Lozandes</td><td class="r">2 km</td></tr>
+          <tr><td>Bosque dos Buritis</td><td>Setor Oeste</td><td class="r">1,5 km</td></tr>
+          <tr><td>Alphaville Flamboyant</td><td>Residenciais do Alphaville</td><td class="r">2 km</td></tr>
+          <tr><td>Aldeia do Vale</td><td>Condomínio inteiro</td><td class="r">2 km</td></tr>
+          <tr><td>Jardins (um pin por condomínio)</td><td>Madri, Paris, Atenas, Milão, Florença, Munique, Valência, França</td><td class="r">1 km</td></tr>
+          <tr><td>Portal do Sol, Goiânia Golfe Clube, Plateau d'Or</td><td>Um pin em cada</td><td class="r">1 km</td></tr>
+          <tr><td>Autódromo de Goiânia</td><td>Público de carro (fim de semana de evento)</td><td class="r">1 km</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Configuração do conjunto</h3>
+        <ul>
+          <li>Localização: só os pins acima. Não incluir "Goiânia" como cidade.</li>
+          <li>Excluir Aparecida de Goiânia e Senador Canedo, para o raio não vazar pela divisa.</li>
+          <li>Idade mínima 28. Homens, 28 a 60, como sugestão de público.</li>
+          <li>Destino WhatsApp, com botão de WhatsApp.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Conferir antes de publicar</h3>
+        <ul>
+          <li>Tamanho estimado do público no Gerenciador. Se ficar pequeno demais e a frequência passar de 3 por semana, aumente os raios em 0,5 km.</li>
+          <li>Cada pin no mapa, um por um, para confirmar que está dentro de Goiânia.</li>
+          <li>Exclusão de quem já iniciou conversa nos últimos 30 dias.</li>
+          <li>Tradução automática de voz desligada.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section id="investimento">
+    <div class="sec-head"><span class="sec-n">08</span><h2>Investimento</h2></div>
+    <div class="split" role="img" aria-label="Divisão do orçamento diário: 80 reais em mensagens e 20 reais em audiência">
+      <div class="msg">Mensagens · R$ 80/dia</div>
+      <div class="aud">Audiência · R$ 20</div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Campanha</th><th class="r">Por dia</th><th class="r">Por mês (30 dias)</th><th class="r">Parte</th></tr></thead>
+        <tbody>
+          <tr><td>Mensagens (WhatsApp)</td><td class="r">R$ 80</td><td class="r">R$ 2.400</td><td class="r">80%</td></tr>
+          <tr><td>Audiência (visitas ao perfil)</td><td class="r">R$ 20</td><td class="r">R$ 600</td><td class="r">20%</td></tr>
+          <tr class="hl"><td>Total</td><td class="r">R$ 100</td><td class="r">R$ 3.000</td><td class="r">100%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <span class="tag">R$ 80/dia</span>
+        <h3>Campanha de mensagens</h3>
+        <ul>
+          <li>Objetivo: Engajamento, com meta de conversas.</li>
+          <li>Localização: pinos nos principais bairros e condomínios de Goiânia.</li>
+          <li>Semanas 1 e 2: um conjunto frio com os pins, R$ 80.</li>
+          <li>A partir da semana 3: R$ 65 no conjunto frio e R$ 15 em remarketing (quem assistiu 50% dos vídeos ou interagiu com o perfil em 90 dias).</li>
+          <li>4 a 5 anúncios: Ranger V6 regravada, Geely EX5, Jaecoo 7, Silverado e o vídeo de autorregeneração.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag warn">R$ 20/dia</span>
+        <h3>Campanha de audiência</h3>
+        <ul>
+          <li>Objetivo: visitas ao perfil do Instagram.</li>
+          <li>Localização: pino cobrindo a cidade toda de Goiânia.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Dados da conta: análise do Meta Ads da MTD Detail de 17/05 a 17/11/2026.</p>
+  </footer>
+
+</div>
+</body>
+</html>
